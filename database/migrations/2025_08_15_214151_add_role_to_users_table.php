@@ -13,16 +13,7 @@ return new class extends Migration
      */
     public function up()
 {
-   if (!Schema::hasColumn('users', 'role')) {
-        Schema::table('users', function (Blueprint $table) {
-            $table->enum('role', ['admin', 'user'])->default('user');
-        });
-    } else {
-        // إذا كان الحقل موجوداً، تأكد من أنه صحيح
-        Schema::table('users', function (Blueprint $table) {
-            $table->enum('role', ['admin', 'user'])->default('user')->change();
-        });
-    }
+   
 }
 
 
@@ -33,10 +24,6 @@ return new class extends Migration
      */
     public function down()
     {
-       if (Schema::hasColumn('users', 'role')) {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('role');
-        });
-    }
+    
     }
 };
