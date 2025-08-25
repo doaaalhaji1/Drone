@@ -19,7 +19,11 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'], 
+     'allowed_origins' => [
+        'http://localhost:8001',
+        'https://drone-production-59a0.up.railway.app',
+        'http://drone-production-59a0.up.railway.app'
+    ],
 
     'allowed_origins_patterns' => [],
 
